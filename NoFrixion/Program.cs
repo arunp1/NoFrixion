@@ -9,10 +9,11 @@ namespace NoFrixion
         static void Main(string[] args)
         {
 
-            var baseURL = ConfigurationManager.AppSettings["WebAPIBaseURL"];  //Config.GetSection("WebAPIBaseURL").Value;
-
+            var baseURL = ConfigurationManager.AppSettings["WebAPIBaseURL"];
             var apiClient = new WebAPIClientDetails(baseURL);
+
             Console.WriteLine("BTC Price EUR : " + apiClient.GetCurrentRate("EURO"));
+            Console.ReadKey();
 
         }
     }
